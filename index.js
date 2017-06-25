@@ -32,7 +32,7 @@ var id = 0;
     }
 	
 	if(line.indexOf("-->") > -1) {
-	  vttLine = id + '\r\n'+vttLine;
+	  vttLine = '\r\n'+ id + '\r\n'+vttLine;
 	  id += 1;
 	}
 
