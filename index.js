@@ -23,7 +23,9 @@ var id = 0;
     if (!line.trim()) return cb();
 
     var vttLine = line.replace(/(WEBVTT\s*(FILE)?.*)(\r\n)*/g, '').replace(/(\d{2}:\d{2}:\d{2})\.(\d{3}\s+)\-\-\>(\s+\d{2}:\d{2}:\d{2})\.(\d{3}\s*)/g, '$1,$2-->$3,$4').replace(/\<.+\>(.+)/g, '$1').replace(/\<.+\>(.+)\<.+\/\>/g, '$1') + '\r\n';
-
+	if(vttLine.indexOf("X-TIMESTAMP") > -1) {
+		vttLine = '';
+	}
 	
     if (!vttLine.trim()) return cb();
 
